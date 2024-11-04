@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0d0d0d; /* Darker background for gaming */
+  --foreground: #e2e2e2; /* Light grey for text */
+  --primary: #00ffab; /* Neon green for highlights */
+  --secondary: #ff00e6; /* Neon pink for accents */
+  --accent: #00bfff; /* Neon blue for extra highlights */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #e2e2e2;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(135deg, #0a0a0a, #151515);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+/* Utility Layer for Custom Gaming Effects */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .neon-text {
+    color: var(--primary);
+    text-shadow: 0 0 8px var(--primary), 0 0 16px var(--primary), 0 0 32px var(--primary);
+  }
+  .neon-accent {
+    color: var(--secondary);
+    text-shadow: 0 0 8px var(--secondary), 0 0 16px var(--secondary), 0 0 32px var(--secondary);
+  }
+  .glow-effect {
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 40px var(--accent);
+    border-radius: 10px;
+  }
+  .grid-border {
+    border: 2px solid var(--secondary);
+    padding: 8px;
+    border-radius: 12px;
+  }
+}
+
+/* Gaming Vibes Button Style */
+.button-gaming {
+  background: var(--primary);
+  color: var(--foreground);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.button-gaming:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px var(--primary), 0 0 24px var(--primary);
+}
+.button-gaming:active {
+  transform: scale(0.95);
+}
